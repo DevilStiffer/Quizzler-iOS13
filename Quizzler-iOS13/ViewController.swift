@@ -18,21 +18,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-    
     }
+    
     @IBAction func trueButtonAction(_ sender: Any) {
         updateUI(isNext: true)
     }
     
     @IBAction func falseButtonAction(_ sender: Any) {
-        
         updateUI(isNext: false)
-        
     }
     
     func updateUI(isNext : Bool) {
-        
         if isNext && selectedQuestion < quiz.count {
             selectedQuestion += 1
             questionText.text = quiz[selectedQuestion]
@@ -42,7 +38,6 @@ class ViewController: UIViewController {
                 questionText.text = quiz[selectedQuestion]
             }
         }
-    
     }
 }
 
