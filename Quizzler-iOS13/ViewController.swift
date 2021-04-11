@@ -19,6 +19,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+
+    func displayMessage(msg: String) {
+        print(msg)
+    }
     
     @IBAction func trueButtonAction(_ sender: Any) {
         updateUI(isNext: true)
