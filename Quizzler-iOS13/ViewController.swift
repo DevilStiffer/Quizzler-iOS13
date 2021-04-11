@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let quiz = ["Four","Five","Eight","Run"]
+    var selectedQuestion = -1
+    
+    @IBOutlet weak var questionText: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -18,6 +23,25 @@ class ViewController: UIViewController {
     func displayMessage(msg: String) {
         print(msg)
     }
-
+    
+    @IBAction func trueButtonAction(_ sender: Any) {
+        updateUI(isNext: true)
+    }
+    
+    @IBAction func falseButtonAction(_ sender: Any) {
+        updateUI(isNext: false)
+    }
+    
+    func updateUI(isNext : Bool) {
+        if isNext && selectedQuestion < quiz.count {
+            selectedQuestion += 1
+            questionText.text = quiz[selectedQuestion]
+        } else {
+            if 0 < selectedQuestion && selectedQuestion < quiz.count {
+                selectedQuestion -= 1
+                questionText.text = quiz[selectedQuestion]
+            }
+        }
+    }
 }
 
